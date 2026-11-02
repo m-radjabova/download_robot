@@ -11,7 +11,7 @@ Bot foydalanuvchidan ism va telefon raqamini oladi, MongoDB'da saqlaydi va video
 5. `.env.example` faylidan `.env` yarating (`cp .env.example .env`) va `TOKEN`, `RAPIDAPI_KEY`, `RAPIDAPI_HOST`, `FACEBOOK_API_HOST` hamda Atlas manzilini `MONGODB_URI` qatoriga kiriting. `<db_user>`, `<db_password>` va `cluster0.xxxxx` qismlarini Atlas bergan qiymatlar bilan almashtiring. Parolda `@`, `/` kabi belgilar bo'lsa, URL-encode qiling. `.env` va boshqa `.env.*` fayllari Git tomonidan e'tiborsiz qoldiriladi; GitHub'ga faqat maxfiy qiymatlarsiz `.env.example` yuboriladi.
 6. `npm start` buyrug'ini bajaring. Bot kerakli collection va indexlarni o'zi yaratadi.
 
-`MONGODB_URI` namunasi: `mongodb+srv://botuser:parol@cluster0.ab123.mongodb.net/telegram_video_bot?retryWrites=true&w=majority`
+retryWrites=true&w=majority`
 
 `RAPIDAPI_HOST` Instagram, YouTube va TikTok API hostini, `FACEBOOK_API_HOST` esa faqat Facebook RapidAPI host nomini belgilaydi (masalan, `facebook-reels-and-video-downloader.p.rapidapi.com`; `https://` yoki `/facebook` qo'shmang). YouTube va TikTok uchun `POST /youtube/download` hamda `POST /tiktok/download` endpointlari `{ "url": "...", "format": "720p" }` shaklidagi JSON qabul qiladi. YouTube'da media server `403` qaytarsa, bot yangi API havolasini bir marta olib qayta urinadi. `format` sifatida MP3 ham tanlash mumkin. Facebook API `GET /facebook?url=...` endpointidan foydalanadi. `.env` ichidagi qiymatlarni boshqalar bilan ulashmang. RapidAPI kaliti faqat `.env` ichida saqlanadi; uni kod yoki repozitoriyga qo'shmang. Bot `/start`, `/menu` va `/cancel` buyruqlarini qo'llaydi.
 
